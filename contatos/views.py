@@ -35,6 +35,11 @@ def busca(request):
     if termo is None or not termo:
         contatos = Contato.objects.all()
 
+        paginator = Paginator(contatos, 3)
+
+        page = request.GET.get('p')
+        contatos = paginator.get_page(page)
+
         return render(request, 'contatos/busca.html', {
             'contatos': contatos
         })
