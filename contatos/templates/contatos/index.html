@@ -15,7 +15,7 @@
           </thead>
           <tbody>
             {%for contato in contatos%}
-            {% if contato.mostrar %}
+           <!-- {% if contato.mostrar %} -->
             <tr>
               <td>
                 <a href="{% url 'ver_contato' contato.id %}"> {{contato.nome}}</a>
@@ -24,7 +24,7 @@
               <td>{{contato.telefone}}</td>
               <td>{{contato.categoria}}</td>
             </tr>
-            {%endif%}
+            <!-- {%endif%}-->
             {% endfor %}
           </tbody>
         </table>
