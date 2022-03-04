@@ -33,7 +33,11 @@ def busca(request):
     termo = request.GET.get('termo')
 
     if termo is None or not termo:
-        return render(request, 'contatos/index.html')
+        contatos = Contato.objects.all()
+
+        return render(request, 'contatos/busca.html', {
+            'contatos': contatos
+        })
     
     campos = Concat('nome', Value(' '), 'sobrenome',)
 
