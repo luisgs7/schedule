@@ -35,7 +35,7 @@ def busca(request):
     if termo is None or not termo:
         contatos = Contato.objects.all()
 
-        paginator = Paginator(contatos, 3)
+        paginator = Paginator(contatos, 4)
 
         page = request.GET.get('p')
         contatos = paginator.get_page(page)
